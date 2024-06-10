@@ -1,0 +1,97 @@
+.app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100svh;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 clamp(1rem, 5vw, 5rem);
+}
+
+.app-header input {
+  width: min(500px, 65%);
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.shelf-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--red);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.shelf-link a:hover {
+  background-color: var(--red-hover);
+  color: #fff;
+}
+
+.shelf-link .mobile-view {
+  display: none;
+}
+
+.shelf-link a span {
+  translate: 0 -0.1rem;
+}
+
+.book-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-items: center;
+  gap: 1rem;
+  margin-top: 20px;
+  padding: 0 clamp(1rem, 5vw, 5rem);
+  overflow-y: auto;
+  width: 100%;
+  max-height: calc(100vh - 100px);
+}
+
+@media screen and (max-width: 480px) {
+  .shelf-link .desktop-view {
+    display: none;
+  }
+
+  .shelf-link .mobile-view {
+    display: flex;
+  }
+
+  .book-results {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .book-results {
+    grid-template-columns: repeat(auto-fit, minmax(149px, 1fr));
+  }
+}

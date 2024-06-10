@@ -1,0 +1,49 @@
+.bookshelf-container {
+  width: 100%;
+}
+
+.bookshelf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0 clamp(1rem, 5vw, 5rem);
+}
+
+.bookshelf-header a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+}
+
+.bookshelf-header h2 {
+  text-align: center;
+  margin: 0.7rem 0;
+  font-size: 1.3rem;
+}
+
+.bookshelf-books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-items: center;
+  gap: 1rem;
+  margin-top: 20px;
+  padding: 0 clamp(1rem, 5vw, 5rem);
+  overflow-y: auto;
+  width: 100%;
+  max-height: calc(100vh - 70px);
+}
+
+@media screen and (max-width: 480px) {
+  .bookshelf-books {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .bookshelf-books {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
